@@ -1,0 +1,31 @@
+{
+    "variables": {
+        "access_key":    "{{env `ACCESS_KEY`}}",
+        "secret_key":    "{{env `SECRET_KEY`}}",
+        "region":        "{{env `REGION`}}"
+    },
+    "builders": [
+        {
+            "type":          "amazon-ebs",
+            "access_key":    "{{user `ACCESS_KEY`}}",
+            "secret_key":    "{{user `SECRET_KEY`}}",
+            "region":        "{{user `region`}}",
+            "source_ami":    "{{user `source_ami`}}",
+            "instance_type": "{{user `instance_type`}}",
+            "ssh_username":  "{{user `ssh_username`}}",
+            "ami_name":      "{{user `ami_name`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "packages.sh"
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "manifest",
+            "output":"output.json"
+        }
+    ]
+}
