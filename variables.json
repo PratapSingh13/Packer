@@ -1,0 +1,6 @@
+{
+    "source_ami":    "ami-0533f2ba8a1995cf9",
+    "instance_type": "t2.medium",
+    "ssh_username":  "ec2-user",
+    "ami_name":      "Package-Web-AMI"
+}
