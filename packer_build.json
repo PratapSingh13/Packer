@@ -9,7 +9,15 @@
             "instance_type":        "{{user `instance_type`}}",
             "ssh_username":         "{{user `ssh_username`}}",
             "ami_name":             "{{user `ami_name`}}-{{isotime | clean_resource_name}}",
-            "source_ami":           "{{user `source_ami`}}"
+            "source_ami_filter": {
+                "filters": {
+                 "virtualization-type": "hvm",
+                 "name":                "Monolith-Golden-AMI",
+                 "root-device-type":    "ebs"
+                },
+                "owners":      ["614680000114"],
+                "most_recent": true
+            }
         }
     ],
     "provisioners": [
