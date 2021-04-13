@@ -5,6 +5,5 @@
     "region":              "ap-south-1",
     "source_ami_name":     "Packages-AMI",
     "root_device_type":    "ebs",
-    "virtualization_type": "hvm",
-    "iam_profile":         "EC2_Packer"
+    "virtualization_type": "hvm"
 }
