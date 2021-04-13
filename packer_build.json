@@ -1,31 +1,32 @@
 {
-    "variables": {
-        "access_key":    "{{env `ACCESS_KEY`}}",
-        "secret_key":    "{{env `SECRET_KEY`}}",
-        "region":        "{{env `REGION`}}"
-    },
     "builders": [
         {
-            "type":          "amazon-ebs",
-            "access_key":    "{{user `ACCESS_KEY`}}",
-            "secret_key":    "{{user `SECRET_KEY`}}",
-            "region":        "{{user `region`}}",
-            "source_ami":    "{{user `source_ami`}}",
-            "instance_type": "{{user `instance_type`}}",
-            "ssh_username":  "{{user `ssh_username`}}",
-            "ami_name":      "{{user `ami_name`}}"
+            "type":                 "amazon-ebs",
+            "region":               "{{user `region`}}",
+            "instance_type":        "{{user `instance_type`}}",
+            "ssh_username":         "{{user `ssh_username`}}",
+            "ami_name":             "{{user `ami_name`}}-{{isotime | clean_resource_name}}",
+            "source_ami_filter": {
+                "filters": {
+                 "virtualization-type": "{{user `virtualization_type`}}",
+                 "name":                "{{user `source_ami_name`}}",
+                 "root-device-type":    "{{user `root_device_type`}}"
+                },
+                "owners":      ["836096864812"],
+                "most_recent": true
+            }
         }
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "packages.sh"
+            "type":   "shell",
+            "script": "admin_script.sh"
         }
     ],
     "post-processors": [
         {
-            "type": "manifest",
-            "output":"output.json"
+            "type":   "manifest",
+            "output": "output.json"
         }
     ]
 }
