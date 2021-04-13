@@ -1,4 +1,7 @@
 {
+    "variables": {
+        "env":  "{{env `ENV`}}"
+    },
     "builders": [
         {
             "type":                 "amazon-ebs",
@@ -21,6 +24,9 @@
         {
             "type":   "shell",
             "script": "admin_script.sh"
+            "environment_vars": [
+                "ENV={{ user `env` }}"
+            ]
         }
     ],
     "post-processors": [
