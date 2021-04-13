@@ -1,9 +1,9 @@
 {
-    "instance_type":       "t2.micro",
+    "instance_type":       "t2.medium",
     "ssh_username":        "ec2-user",
     "ami_name":            "ADMIN-AMI",
-    "region":              "ap-south-1",
-    "source_ami":          "ami-0bcf5425cdc1d8a85",
+    "region":              "us-east-1",
+    "source_ami_name":     "Monolith-Golden-AMI",
     "root_device_type":    "ebs",
     "virtualization_type": "hvm"
 }
