@@ -1,6 +1,6 @@
 {
-    "instance_type":       "t2.medium",
-    "ssh_username":        "ec2-user",
+    "instance_type":       "t2.micro",
+    "ssh_username":        "ubuntu",
     "ami_name":            "ADMIN-AMI",
     "region":              "ap-south-1",
     "source_ami_name":     "Packages-AMI",
