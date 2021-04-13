@@ -3,7 +3,7 @@
     "ssh_username":        "ubuntu",
     "ami_name":            "ADMIN-AMI",
     "region":              "ap-south-1",
-    "source_ami_name":     "Packages-AMI",
+    "source_ami":          "ami-042d99624b4fa23f2",
     "root_device_type":    "ebs",
     "virtualization_type": "hvm"
 }
