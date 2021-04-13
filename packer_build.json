@@ -23,7 +23,7 @@
     "provisioners": [
         {
             "type":   "shell",
-            "script": "admin_script.sh"
+            "script": "admin_script.sh",
             "environment_vars": [
                 "ENV={{ user `env` }}"
             ]
