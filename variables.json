@@ -2,7 +2,7 @@
     "instance_type":       "t2.medium",
     "ssh_username":        "ec2-user",
     "ami_name":            "ADMIN-AMI",
-    "region":              "us-east-1",
+    "region":              "ap-south-1",
     "source_ami_name":     "Packages-AMI",
     "root_device_type":    "ebs",
     "virtualization_type": "hvm",
