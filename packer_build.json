@@ -1,6 +1,6 @@
 {
     "variables": {
-        "env":  "{{env `ENVIRONMENT`}}"
+        "environment":  "{{env `ENVIRONMENT`}}"
     },
     "builders": [
         {
@@ -25,7 +25,7 @@
             "type":   "shell",
             "script": "admin_script.sh",
             "environment_vars": [
-                "ENVIRONMENT={{ user `env` }}"
+                "ENVIRONMENT={{ user `environment` }}"
             ]
         }
     ],
