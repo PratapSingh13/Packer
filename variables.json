@@ -5,5 +5,6 @@
     "region":              "us-east-1",
     "source_ami_name":     "Monolith-Golden-AMI",
     "root_device_type":    "ebs",
-    "virtualization_type": "hvm"
+    "virtualization_type": "hvm",
+    "iam_profile":         "EC2_Packer"
 }
