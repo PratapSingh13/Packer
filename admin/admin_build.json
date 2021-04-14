@@ -1,0 +1,33 @@
+{
+    "builders": [
+        {
+            "type":                 "amazon-ebs",
+            "region":               "{{user `region`}}",
+            "instance_type":        "{{user `instance_type`}}",
+            "ssh_username":         "{{user `ssh_username`}}",
+            "ami_name":             "{{user `ami_name`}}-{{isotime | clean_resource_name}}",
+            "iam_instance_profile": "{{user `iam_profile`}}",
+            "source_ami_filter": {
+                "filters": {
+                 "virtualization-type": "{{user `virtualization_type`}}",
+                 "name":                "{{user `source_ami_name`}}",
+                 "root-device-type":    "{{user `root_device_type`}}"
+                },
+                "owners":      ["614680000114"],
+                "most_recent": true
+            }
+        }
+    ],
+    "provisioners": [
+        {
+            "type":   "shell",
+            "script": "admin_script.sh"
+        }
+    ],
+    "post-processors": [
+        {
+            "type":   "manifest",
+            "output": "output.json"
+        }
+    ]
+}

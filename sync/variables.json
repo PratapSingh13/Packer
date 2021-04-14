@@ -1,0 +1,10 @@
+{
+    "instance_type":       "t2.medium",
+    "ssh_username":        "ec2-user",
+    "ami_name":            "SYNC-AMI",
+    "region":              "us-east-1",
+    "source_ami_name":     "Monolith-Golden-AMI",
+    "root_device_type":    "ebs",
+    "virtualization_type": "hvm",
+    "iam_profile":         "EC2_Packer"
+}

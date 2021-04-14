@@ -1,0 +1,7 @@
+{
+    "source_ami":    "ami-0742b4e673072066f",
+    "instance_type": "t2.medium",
+    "ssh_username":  "ec2-user",
+    "AMI_NAME":      "Monolith-Golden-AMI-v-1.0",
+    "region":        "us-east-1"
+}
