@@ -13,7 +13,7 @@
             "source_ami_filter": {
                 "filters": {
                  "virtualization-type": "{{user `virtualization_type`}}",
-                 "name":                "{{user `source_ami_name`}}-",
+                 "name":                "{{user `source_ami_name`}}",
                  "root-device-type":    "{{user `root_device_type`}}"
                 },
                 "owners":      ["614680000114"],
