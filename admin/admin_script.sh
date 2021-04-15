@@ -53,16 +53,16 @@ createDirectory
 echo "Copying SSl files from S3"
 copySSlFiles
 
-echo "Copying ini files and conf files from S3 for CRON application"
+echo "Copying ini files and conf files from S3 for ADMIN application"
 copyPackageConfigurationFiles
 
 echo "Copying certificates from S3"
 copyTLSCertificates
 
-echo "Copying Composer files from S3 for CRON application"
+echo "Copying Composer files from S3 for ADMIN application"
 copyComposer
 
-echo "Copying application config files from S3 for CRON application"
+echo "Copying application config files from S3 for ADMIN application"
 copyApplicationConfigFiles
 
 echo "Setting few permissions"
