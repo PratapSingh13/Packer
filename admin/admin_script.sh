@@ -1,6 +1,7 @@
 #!/bin/bash
 #Creating Code directory
 createDirectory() {
+    echo "Creating ${ENVIRONMENT} directories
     sudo mkdir -p /var/www/html/${ENVIRONMENT}.docasap.com
     sudo mkdir -p /var/www/html/${ENVIRONMENT}-laravel-logs
     sudo mkdir -p /var/www/html/sync${ENVIRONMENT}.docasap.com
