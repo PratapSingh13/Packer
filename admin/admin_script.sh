@@ -12,8 +12,7 @@ createDirectory() {
 }
 
 copySSlFiles() {
-    cd; cd -
-    sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/rds-combined-ca-bundle.pem /var/www/certs/
+    sudo aws s3 cp s3://da-app-configuration/testing/web/certs/rds-combined-ca-bundle.pem /var/www/certs/
     sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/rds-ca-2015-us-east-1.pem /var/www/certs/
 }
 
