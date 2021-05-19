@@ -16,7 +16,7 @@
                     "name":                "{{user `source_ami_name`}}",
                     "root-device-type":    "{{user `root_device_type`}}"
                 },
-                "owners":      ["614680000114"],
+                "owners":      ["836096864812"],
                 "most_recent": true
             }
         }
