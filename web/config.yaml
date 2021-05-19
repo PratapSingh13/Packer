@@ -1,4 +1,4 @@
 git_url: "git@github.com:PratapSingh13/Packer.git"
 git_branch: "main"
-variable_file: variables.json
-packerBuilder_file: web_build.json
+variable_file: web/variables.json
+packerBuilder_file: web/web_build.json
