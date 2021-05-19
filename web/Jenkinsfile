@@ -1,0 +1,4 @@
+@Library('packer') _
+node() {
+	packer.call(file: "config.yaml")
+}
