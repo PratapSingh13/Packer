@@ -8,6 +8,7 @@ createDirectory() {
     sudo chown apache:apache /da/log/audit/${ENVIRONMENT}-admin-portal -R
     sudo mkdir -p /da/log/audit/${ENVIRONMENT}-admin-portal
     sudo chmod 771 /da/log/audit/${ENVIRONMENT}-admin-portal/
+    ls -l /var/www/html
 }
 
 copySSlFiles() {
