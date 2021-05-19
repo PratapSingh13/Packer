@@ -1,0 +1,4 @@
+@Library('shared-library') _
+node() {
+	packer.call(file: "web/config.yaml")
+}

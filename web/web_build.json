@@ -24,7 +24,7 @@
     "provisioners": [
         {
             "type":   "shell",
-            "script": "web_script.sh",
+            "script": "web/web_script.sh",
             "environment_vars": [
                 "ENVIRONMENT={{ user `environment` }}"
             ]

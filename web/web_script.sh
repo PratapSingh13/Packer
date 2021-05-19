@@ -8,6 +8,7 @@ createDirectory() {
     sudo chown apache:apache /da/log/audit/${ENVIRONMENT}-admin-portal -R
     sudo mkdir -p /da/log/audit/${ENVIRONMENT}-admin-portal
     sudo chmod 771 /da/log/audit/${ENVIRONMENT}-admin-portal/
+    ls -l /var/www/html
 }
 
 copySSlFiles() {
@@ -22,11 +23,11 @@ copyPackageConfigurationFiles() {
     sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/php/opcache-default.blacklist /etc/php.d/
     sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/apache/httpd.conf /etc/httpd/conf/
     sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/apache/ssl.conf /etc/httpd/conf.d/
-
 }
 
 copyTLSCertificates() {
-    echo "Copying TLS certs"
+    sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/docasap_wildcard.crt /etc/pki/tls/certs/
+    sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/docasap_wildcard.key /etc/pki/tls/private/
 }
 
 copyComposer() {
