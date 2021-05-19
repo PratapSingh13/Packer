@@ -26,8 +26,8 @@ copyPackageConfigurationFiles() {
 }
 
 copyTLSCertificates() {
-    sudo aws s3 cp s3://da-app-configuration/testing/web/certs/docasap_wildcard.crt /etc/pki/tls/certs/
-    sudo aws s3 cp s3://da-app-configuration/testing/web/certs/docasap_wildcard.key /etc/pki/tls/private/
+    sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/docasap_wildcard.crt /etc/pki/tls/certs/
+    sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/docasap_wildcard.key /etc/pki/tls/private/
 }
 
 copyComposer() {
