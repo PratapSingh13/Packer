@@ -1,4 +1,4 @@
 @Library('shared-library') _
 node() {
-	packer.call(file: "config.yaml")
+	packer.call(file: "config.yml")
 }
