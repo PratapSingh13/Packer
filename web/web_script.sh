@@ -1,7 +1,7 @@
 #!/bin/bash
 #Creating Code directory
 createDirectory() {
-    sudo mkdir -p /var/www/html/${ENVIRONMENT}.docasap.com
+    sudo mkdir -p /var/www/html/${ENVIRONMENT}.docasap.com/public
     sudo mkdir -p /var/www/html/${ENVIRONMENT}-laravel-logs
     sudo mkdir -p /var/www/html/ng-${ENVIRONMENT}.docasap.com
     sudo mkdir -p /da/log/audit/${ENVIRONMENT}-admin-portal
@@ -28,6 +28,10 @@ copyPackageConfigurationFiles() {
 copyTLSCertificates() {
     sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/docasap_wildcard.crt /etc/pki/tls/certs/
     sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/certs/docasap_wildcard.key /etc/pki/tls/private/
+}
+
+copyIndexFile() {
+    sudo aws s3 cp s3://da-app-configuration/${ENVIRONMENT}/web/apache/index.html /var/www/html/${ENVIRONMENT}.docasap.com/public/
 }
 
 copyComposer() {
@@ -60,6 +64,9 @@ copyPackageConfigurationFiles
 
 echo "Copying certificates from S3"
 copyTLSCertificates
+
+echo "Copying html from S3"
+copyIndexFile
 
 echo "Copying Composer files from S3 for WEB application"
 copyComposer
